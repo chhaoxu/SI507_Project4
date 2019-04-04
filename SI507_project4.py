@@ -38,10 +38,7 @@ class GameObject(pyglet.sprite.Sprite):
         self.angle = None
 
     def move(self):
-        '''
-        Move this game object one unit forward in the direction of its velocity.
-        :return:
-        '''
+
         x_vel,y_vel = as_cartesian(self.velocity, self.angle)
         self.set_position(self.x + int(x_vel), self.y + int(y_vel))
 
@@ -62,9 +59,7 @@ class BallDeflector(GameObject):
         self.shunt(ball)
 
     def shunt(self, ball):
-        # Shunt the ball in its new direction by enough so that it is no longer overlapping with self.
-        # This avoids processing multiple collisions of self and ball before the ball "escapes"
-        while ball.colliding_with(self):
+         while ball.colliding_with(self):
             ball.move()
             if (ball.x < 0) or (ball.y < 0):
                 foobar
@@ -210,7 +205,7 @@ class Paddle (BallDeflector):
 
 class Brick (BallDeflector):
     def deflect_ball(self,ball,side_hit):
-        print("hit an brick")
+        print("an brick be hit")
         if side_hit == 'RIGHT' or side_hit == 'LEFT':
             ball.angle = (180-ball.angle) % 360
         elif side_hit == 'BOTTOM' or side_hit == 'TOP':
@@ -224,15 +219,18 @@ class Brick (BallDeflector):
         i = 0
         while i < len(self.game.game_objects) - 1:
             if (ball.x < self.game.game_objects[i].x):
-                left, right = ball, self.game.game_objects[i]
+                left = ball
+                right = self.game.game_objects[i]
             else:
-                left, right = self.game.game_objects[i], ball
+                left = self.game.game_objects[i]
+                right = ball
             x_distance = right.x - (left.x + left.width)
-
             if (ball.y < self.game.game_objects[i].y):
-                bottom, top = ball, self.game.game_objects[i]
+                bottom = ball
+                top = self.game.game_objects[i]
             else:
-                bottom, top = self.game.game_objects[i], ball
+                bottom = self.game.game_objects[i]
+                top = ball
             y_distance = top.y - (bottom.y+ bottom.height)
 
             if x_distance <= 6 and y_distance <= 5:
@@ -240,7 +238,7 @@ class Brick (BallDeflector):
                 self.game.record_score()
                 print(i)
             else:
-                i = i + 1
+                i += 1
 
         self.game.increment_hit_count()
 
@@ -336,7 +334,7 @@ class Game(object):
     def record_score(self):
         self.score += 1
         self.game_window.score_label.text = 'Score: ' + str(self.score)
-        print('Score for player is ' + str(self.score))
+        print('The player score is ' + str(self.score))
 
     def draw(self):
         for game_object in self.game_objects:
@@ -345,7 +343,7 @@ class Game(object):
     def increment_hit_count(self):
         self.hit_count += 1
         if (self.hit_count % 10) == 0:
-            print("speeding up")
+            print("speeding is up")
             for ball in self.balls:
                 ball.velocity += 10
 
