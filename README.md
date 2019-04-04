@@ -1,12 +1,13 @@
 # SI507_Project4
 ## Which project option I chose?
-**I chose project option 2.**
+**I chose project option 2: Building a game with the Pyglet library.**
 
 ## What my name is?
 **My name is Chenhao Xu and my unique name is chhaoxu.**
 
 ## What my project does, concisely?
 **This project can relize a game function that has 6-deep floor-to-ceiling barricade of bricks and we can initiaizie a ball to hit the brick and make bricks to be disappeared, the velocity can be increased and the scores is showed on the window durning the game.**
+**The new feature I have added that you did not suggest is that I add a function that can show the score in every hit of the brick.**
 ![image](https://github.com/chhaoxu/SI507_Project4/raw/master/projectSource/result.png)
 
 
