@@ -9,6 +9,7 @@
 **This project can relize a game function that has 6-deep floor-to-ceiling barricade of bricks and we can initiaizie a ball to hit the brick and make bricks to be disappeared, the velocity can be increased and the scores is showed on the window durning the game.**
 
 **_The new feature I have added that you did not suggest is that I add a function that can show the score in every hit of the brick._**
+
 ![image](https://github.com/chhaoxu/SI507_Project4/raw/master/projectSource/result.png)
 
 
