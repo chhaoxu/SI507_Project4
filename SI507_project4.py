@@ -299,7 +299,7 @@ class Game(object):
         self.bricks = []
         for i in range(0,11):
             for j in range(0,6):
-                self.bricks.append(Brick(initial_x = 730 - brick_height*j,
+                self.bricks.append(Brick(initial_x = 750 - brick_height*j,
                         initial_y = 5 + brick_height*i,
                         img_file = wall_imgs[2],
                         game = self))
