@@ -7,7 +7,7 @@
 
 ## What my project does, concisely?
 **This project can relize a game function that has 6-deep floor-to-ceiling barricade of bricks and we can initiaizie a ball to hit the brick and make bricks to be disappeared, the velocity can be increased and the scores is showed on the window durning the game.**
-![image](https://github.com/chhaoxu/Project2/raw/master/projectSource/result.png)
+![image](https://github.com/chhaoxu/SI507_Project4/raw/master/projectSource/result.png)
 
 
 ## How my project be designed?
